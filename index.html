@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Whispers in the Wind &mdash; Spiritual Direction &amp; Spiritual Care</title>
-<meta name="description" content="Whispers in the Wind offers spiritual direction and spiritual care to those facing crises, turning points, and the ongoing unfolding of the spiritual life.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a href="index.html" class="brand">
-      <span class="brand-mark">
-        <img src="images/WITW_Logo_Black.png" alt="Whispers in the Wind logo">
-      </span>
-      <span class="brand-text">Whispers in the Wind</span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav" id="siteNav">
-      <a href="about.html">About</a>
-      <a href="my-story.html">My Story</a>
-      <a href="booking.html">Booking</a>
-      <a href="contact.html">Contact</a>
-      <a href="donate.html" class="nav-cta">Donate</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
+---
+description: Remote spiritual direction and spiritual care with Lesli Hudson-Reynolds for church leaders, ministry staff, LGBTQ+ Christians, and all spiritual seekers.
+---
   <section class="hero">
     <div class="hero-wind" aria-hidden="true">
       <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
@@ -71,13 +38,14 @@
     </div>
   </section>
 
-  <section id="testimonials" class="section section-alt">
+  <section id="testimonials" class="section section-alt" aria-labelledby="testimonials-title">
     <div class="wrap">
+      <h2 id="testimonials-title" class="visually-hidden">What people say about Lesli</h2>
       <div class="quote-grid">
         <blockquote class="quote-card">
           <p>&ldquo;Lesli speaks, ministers, and cares for people from a deep place of compassion and grace. Their heart and skill for walking with and guiding all people are born from their own life experience and extensive education. I have personally witnessed and experienced Lesli's love for Jesus and desire to lead others into His love.&rdquo;</p>
           <footer>
-            <div class="quote-avatar"><img src="images/jeff-maness.png" alt="Jeff Maness"></div>
+            <div class="quote-avatar"><img src="images/jeff-maness.webp" alt="Jeff Maness" width="128" height="128" loading="lazy"></div>
             <div>
               <cite>Jeff Maness</cite>
               <ul class="quote-titles">
@@ -89,7 +57,7 @@
         <blockquote class="quote-card">
           <p>&ldquo;Lesli enters into the stories of others with fierce love and compassion. They have dedicated years to theological growth and spiritual direction training so that they can journey with others into more spiritual healing and freedom. Lesli's gift of presence to others will change the world!&rdquo;</p>
           <footer>
-            <div class="quote-avatar"><img src="images/beth-broadbooks.png" alt="Beth Broadbooks"></div>
+            <div class="quote-avatar"><img src="images/beth-broadbooks.webp" alt="Beth Broadbooks" width="128" height="128" loading="lazy"></div>
             <div>
               <cite>Beth Broadbooks</cite>
               <ul class="quote-titles">
@@ -103,7 +71,7 @@
         <blockquote class="quote-card">
           <p>&ldquo;Lesli offers a humble and compassionate heart as a spiritual director. I have worked with Lesli for multiple years in ministry and have witnessed firsthand their wisdom and listening abilities as a companion through complex situations. Whether dealing with burnout, doubt, or generally seeking to grow spiritually, Lesli would be a great companion along the journey.&rdquo;</p>
           <footer>
-            <div class="quote-avatar"><img src="images/josh-proctor.png" alt="Josh Proctor"></div>
+            <div class="quote-avatar"><img src="images/josh-proctor.webp" alt="Josh Proctor" width="128" height="128" loading="lazy"></div>
             <div>
               <cite>Josh Proctor</cite>
               <ul class="quote-titles">
@@ -128,24 +96,33 @@
 
   <section id="donate" class="section donate-section">
     <div class="wrap donate-inner">
-      <p class="prose" style="color:rgba(255,255,255,.85)">Your donations go directly towards helping Whispers in the Wind continue to serve all spiritual seekers. Any &amp; all support is highly appreciated.</p>
+      <p class="prose">Your donations go directly towards helping Whispers in the Wind continue to serve all spiritual seekers. Any &amp; all support is highly appreciated.</p>
       <a href="donate.html" class="btn btn-primary btn-lg">Donate</a>
     </div>
   </section>
 
-</main>
-
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>&copy; <span id="year"></span> Whispers in the Wind</span>
-    <nav class="footer-nav">
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="donate.html">Donate</a>
-    </nav>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
-</body>
-</html>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Whispers in the Wind",
+    "url": "https://whispersinthewind.org/",
+    "logo": "https://whispersinthewind.org/images/WITW_Logo_Black.png",
+    "description": "Training and consulting resources for church leaders, and remote Spiritual Direction / Spiritual Care for church staff and the LGBTQ+ community.",
+    "email": "lesli@whispersinthewind.org",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1735 W State of Franklin Rd, Ste 5-168",
+      "addressLocality": "Johnson City",
+      "addressRegion": "TN",
+      "postalCode": "37604",
+      "addressCountry": "US"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Lesli Hudson-Reynolds",
+      "jobTitle": "Certified Spiritual Director",
+      "url": "https://whispersinthewind.org/about.html"
+    }
+  }
+  </script>

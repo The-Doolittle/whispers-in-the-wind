@@ -1,0 +1,34 @@
+# Site-wide settings. GitHub Pages builds this with Jekyll automatically.
+title: Whispers in the Wind
+tagline: Spiritual Direction & Spiritual Care
+description: Whispers in the Wind offers spiritual direction and spiritual care to those facing crises, turning points, and the ongoing unfolding of the spiritual life.
+url: https://whispersinthewind.org
+logo: /images/WITW_Logo_Black.png
+
+plugins:
+  - jekyll-seo-tag   # <title>, meta description, canonical, Open Graph, Twitter cards
+  - jekyll-sitemap   # generates /sitemap.xml
+
+exclude:
+  - README.md
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /images/hero-church.jpg   # default social-share preview image
+
+# Header navigation, in order. The Donate link gets the highlighted button style.
+nav:
+  - title: About
+    url: /about.html
+  - title: My Story
+    url: /my-story.html
+  - title: Booking
+    url: /booking.html
+  - title: Contact
+    url: /contact.html
+  - title: Donate
+    url: /donate.html
+    cta: true

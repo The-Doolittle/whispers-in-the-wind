@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact &mdash; Whispers in the Wind</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a href="index.html" class="brand">
-      <span class="brand-mark">
-        <img src="images/WITW_Logo_Black.png" alt="Whispers in the Wind logo">
-      </span>
-      <span class="brand-text">Whispers in the Wind</span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav" id="siteNav">
-      <a href="about.html">About</a>
-      <a href="my-story.html">My Story</a>
-      <a href="booking.html">Booking</a>
-      <a href="contact.html">Contact</a>
-      <a href="donate.html" class="nav-cta">Donate</a>
-    </nav>
-  </div>
-</header>
-
-<main>
+---
+title: Contact
+description: Get in touch with Lesli Hudson-Reynolds at Whispers in the Wind with questions about spiritual direction, spiritual care, or support.
+---
   <section class="page-hero">
     <div class="wrap">
       <p class="eyebrow">Contact</p>
@@ -41,51 +10,9 @@
   </section>
 
   <section class="section">
-    <div class="wrap contact-wrap">
-      <div class="contact-copy prose">
-        <p>Whether it's to ask a question, send your support, or just to say hi, drop me a line with your contact information and I'll be sure to respond to you. Your time and trust are of the utmost value to me.</p>
-        <div class="fill-in-notice">
-          <p style="margin-bottom:0">This webpage is currently in beta testing and the form you see here is not currently active. If you're seeing this before the dev has fixed it, please reach out to Lesli directly at lesli@whispersinthewind.org</p>
-        </div>
-      </div>
-
-      <form class="contact-form" id="contactForm">
-        <!--
-          GitHub Pages is static and has no backend, so this form needs a
-          form endpoint (Formspree, Getform, Basin, etc.) to actually
-          deliver email. Replace the action URL below with the client's
-          endpoint.
-        -->
-        <label>
-          Name
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p class="form-note">Or email directly: <a href="mailto:hello@whispersinthewind.org">hello@whispersinthewind.org</a></p>
-      </form>
+    <div class="wrap prose">
+      <p>Whether it's to ask a question, send your support, or just to say hi, drop me a line with your contact information and I'll be sure to respond to you. Your time and trust are of the utmost value to me.</p>
+      <a href="mailto:lesli@whispersinthewind.org" class="btn btn-primary">Email Lesli</a>
+      <p class="form-note">Or write to <a href="mailto:lesli@whispersinthewind.org">lesli@whispersinthewind.org</a></p>
     </div>
   </section>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>&copy; <span id="year"></span> Whispers in the Wind</span>
-    <nav class="footer-nav">
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="donate.html">Donate</a>
-    </nav>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
-</body>
-</html>
