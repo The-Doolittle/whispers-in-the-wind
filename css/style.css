@@ -65,6 +65,19 @@ h1,h2,h3{
 .section{ padding: 88px 0; }
 .section-alt{ background: var(--bg-alt); }
 
+/* Hidden visually but still read by screen readers and search engines */
+.visually-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ============================================================
    Buttons
    ============================================================ */
@@ -138,6 +151,7 @@ h1,h2,h3{
   color: var(--ink-soft);
 }
 .site-nav a:hover{ color: var(--ink); }
+.site-nav a[aria-current="page"]{ color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent-warm); text-underline-offset: 6px; }
 .nav-cta{
   padding: 9px 18px;
   border-radius: 999px;
@@ -218,12 +232,6 @@ h1,h2,h3{
   margin-bottom: .5em;
 }
 .hero .eyebrow{ color: #F0D9BE; }
-.hero-lede{
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.85);
-  max-width: 60ch;
-  margin-bottom: 2em;
-}
 .hero-actions{ display: flex; gap: 14px; flex-wrap: wrap; }
 .hero .btn-ghost{
   color: #FFFFFF;
@@ -255,35 +263,6 @@ h1,h2,h3{
 .card h3{ font-size: 1.3rem; margin-bottom: .5em; }
 .card p{ color: var(--ink-soft); margin: 0 0 24px; }
 .card .btn{ margin-top: auto; align-self: flex-start; }
-
-/* ============================================================
-   Feature card (Appearances)
-   ============================================================ */
-.feature-card{
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 32px;
-  align-items: center;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px;
-}
-.feature-media{
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: var(--bg-alt);
-  color: var(--accent-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-}
-.feature-media svg{ width: 100%; height: 100%; }
-.feature-body h3{ margin-bottom: .35em; }
-.feature-body p{ color: var(--ink-soft); margin: 0 0 .6em; }
-.text-link{ font-weight: 600; color: var(--accent-deep); text-decoration: none; }
 
 /* ============================================================
    Testimonials
@@ -333,6 +312,8 @@ h1,h2,h3{
 
 /* ============================================================
    Contact
+   (.contact-wrap / .contact-form are unused while the page uses a
+   mailto button; kept for when the form backend is ready)
    ============================================================ */
 .contact-wrap{
   display: grid;
@@ -341,21 +322,6 @@ h1,h2,h3{
   align-items: start;
 }
 .contact-copy p{ color: var(--ink-soft); }
-.cal-placeholder{
-  margin-top: 24px;
-  border: 1.5px dashed var(--line);
-  border-radius: var(--radius);
-  padding: 28px;
-  text-align: center;
-  color: var(--ink-soft);
-  font-size: .9rem;
-  background: var(--white);
-}
-.cal-placeholder code{
-  background: var(--bg-alt);
-  padding: 2px 6px;
-  border-radius: 4px;
-}
 
 .contact-form{
   display: flex;
@@ -397,6 +363,7 @@ h1,h2,h3{
   margin: 4px 0 0;
 }
 .form-note a{ color: var(--accent-deep); font-weight: 600; text-decoration: none; }
+.btn + .form-note{ margin-top: 16px; }
 
 /* ============================================================
    Donate
@@ -459,16 +426,6 @@ h1,h2,h3{
 }
 .address-block strong{ color: var(--ink); display:block; margin-bottom: .3em; }
 
-.fill-in-notice{
-  border: 1.5px dashed var(--line);
-  border-radius: var(--radius);
-  padding: 24px 28px;
-  color: var(--ink-soft);
-  background: var(--bg-alt);
-  font-size: .95rem;
-}
-.fill-in-notice code{ background: var(--white); padding: 2px 6px; border-radius: 4px; }
-
 /* ============================================================
    My Story — dark theme page
    ============================================================ */
@@ -480,7 +437,8 @@ h1,h2,h3{
 .story-page .brand,
 .story-page .site-nav a{ color: #EDEAE2; }
 .story-page .brand-mark img{ filter: invert(1) brightness(1.6); }
-.story-page .site-nav a:hover{ color: #FFFFFF; }
+.story-page .site-nav a:hover,
+.story-page .site-nav a[aria-current="page"]{ color: #FFFFFF; }
 .story-page .nav-toggle span{ background: #EDEAE2; }
 .story-page .nav-cta{ background: var(--accent-warm); color: #0F0F0F !important; }
 .story-page .nav-cta:hover{ background: #C79468; }
@@ -541,12 +499,18 @@ h1,h2,h3{
   font-style: italic;
   margin-top: 2.5em;
 }
+.story-body .btn{ margin-top: 1.5em; }
 
 @media (max-width: 720px){
   .story-hero{ min-height: 70vh; align-items: flex-end; }
   .story-hero-card{
     margin: 0 16px 32px;
     max-width: none;
+  }
+  /* mobile dropdown menu: keep it dark so the light link text stays readable */
+  .story-page .site-nav{
+    background: #0F0F0F;
+    border-bottom-color: rgba(255,255,255,0.12);
   }
 }
 
@@ -558,6 +522,7 @@ h1,h2,h3{
   overflow: hidden;
   background: var(--white);
 }
+.cal-embed-wrap > div{ width: 100%; height: 100%; overflow: auto; }
 
 @media (max-width: 720px){
   .cal-embed-wrap{ height: 640px; }
@@ -647,7 +612,6 @@ h1,h2,h3{
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--accent-warm);
-  transition: transform .2s ease;
 }
 .faq-item[open] summary::after{ content: "\2212"; }
 .faq-item p{
@@ -721,13 +685,6 @@ h1,h2,h3{
   .nav-cta{ margin-top: 8px; text-align: center; }
 
   .card-grid{ grid-template-columns: 1fr; }
-
-  .feature-card{
-    grid-template-columns: 1fr;
-    text-align: center;
-    justify-items: center;
-  }
-  .feature-media{ width: 120px; height: 120px; padding: 22px; }
 
   .quote-grid{ grid-template-columns: 1fr; }
   .quote-grid .quote-card:last-child{ grid-column: auto; }
